@@ -24,7 +24,7 @@
 
   <xs:complexType name="PhoneType">
     <xs:simpleContent>
-      <xs:extension base="xs:string">
+      <xs:extension base="NumType">
         <xs:attribute name="type" use="optional">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -36,6 +36,12 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  
+  <xs:simpleType name="NumType">
+   <xs:restriction base="xs:string">
+      <xs:pattern value="\d{3}-\d{2}-\d{2}"/>
+   </xs:restriction> 
+  </xs:simpleType>
 
   <xs:complexType name='PhonesType'>
     <xs:sequence>
